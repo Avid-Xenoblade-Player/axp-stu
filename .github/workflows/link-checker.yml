@@ -1,0 +1,41 @@
+name: Link Checker Chain
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  # --- FIRST JOB IN THE TREE ---
+  linkChecker:
+    name: "Step 1: Scan Links"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Check Links
+        continue-on-error: true
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress './**/*.html'
+          output: ./lychee/out.md
+
+      - name: Create Issue From Broken Links
+        if: steps.lychee.outcome == 'failure'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Link Checker Report: Broken Links Found!"
+          content-filepath: ./lychee/out.md
+          labels: broken-link
+
+      - name: Upload Scan Log for Generator
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-report
+          path: ./lychee/out.md
