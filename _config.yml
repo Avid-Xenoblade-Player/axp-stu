@@ -4,4 +4,4 @@ url: "https://avid-xenoblade-player.github.io"
 baseurl: "/nRTVD"
 
 markdown: kramdown
-permalink: /:title.html
+permalink: /nRTVD/:title.html
