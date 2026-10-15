@@ -7,4 +7,4 @@ url: "https://avid-xenoblade-player.github.io/axp-stu" # Your actual GitHub Page
 baseurl: "/nRTVD"                # This matches your repository name/subfolder
 
 markdown: kramdown
-permalink: /:title.html
+permalink: /nRTVD/:title.html
