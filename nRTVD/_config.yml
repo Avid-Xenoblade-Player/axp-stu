@@ -1,6 +1,0 @@
-title: nRTVD Comic
-description: An interactive MSPA-style user command comic.
-url: "https://github.io" # <-- CHANGE THIS to your GitHub username
-baseurl: "/nRTVD"                     # <-- Links everything properly to your subfolder
-markdown: kramdown
-permalink: /:title.html               # <-- Keeps your URLs matching your old style (e.g., /p1.html)
