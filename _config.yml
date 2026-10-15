@@ -1,10 +1,7 @@
-source: nRTVD
-destination: _site
-
 title: nRTVD Comic
 description: An interactive MSPA-style user command comic.
-url: "https://avid-xenoblade-player.github.io/axp-stu" # Your actual GitHub Pages URL
-baseurl: "/nRTVD"                # This matches your repository name/subfolder
+url: "https://avid-xenoblade-player.github.io"
+baseurl: "/nRTVD"
 
 markdown: kramdown
-permalink: /nRTVD/:title.html
+permalink: /:title.html
