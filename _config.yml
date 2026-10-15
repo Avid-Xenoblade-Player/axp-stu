@@ -1,7 +1,8 @@
+source: nRTVD
 title: nRTVD Comic
 description: An interactive MSPA-style user command comic.
-url: "https://avid-xenoblade-player.github.io"
+url: "https://github.io"
 baseurl: "/nRTVD"
 
 markdown: kramdown
-permalink: /nRTVD/:title.html
+permalink: /:title.html
