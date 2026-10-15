@@ -1,0 +1,23 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://w3.org">
+<channel>
+  <title>{{ site.title }}</title>
+  <link>{{ site.url }}{{ site.baseurl }}/</link>
+  <description>{{ site.description }}</description>
+  <language>en-us</language>
+  <atom:link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self" type="application/rss+xml" />
+  
+  {% for post in site.posts limit:15 %}
+  <item>
+    <title>{{ post.title }}</title>
+    <link>{{ site.url }}{{ post.url }}</link>
+    <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+    <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+    <description>{{ post.content | xml_escape }}</description>
+  </item>
+  {% endfor %}
+</channel>
+</rss>
