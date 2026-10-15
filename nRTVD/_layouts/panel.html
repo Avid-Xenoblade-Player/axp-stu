@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ page.title }}</title>
+    <title>{{ page.panel_title }}</title>
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.bunny.net" />
 		<link
@@ -18,7 +18,7 @@
       </div>
       
       {% if page.next %}
-        <a class="command-link" href="{{ page.next.url | relative_url }}">> {{ page.next.command }}</a>
+        <a class="command-link" href="{{ page.next.url | relative_url }}">> {{ page.next.panel_title }}</a>
       {% endif %}
     </div>
 
