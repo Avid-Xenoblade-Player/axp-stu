@@ -17,12 +17,13 @@
         {{ content }}
       </div>
 		
-		{% assign next_sequence = page.sequence | plus: 1 %}
-		{% assign next_page = site.posts | where: "sequence", next_sequence | first %}
-		{% if next_page %}
-		<a class="command-link" href="{{ next_page.url | relative_url }}">> {{ next_page.panel_title }}</a>
-		{% endif %}
-
+		{% assign target_sequence = page.sequence | plus: 1 %}
+      {% for post in site.posts %}
+        {% if post.sequence == target_sequence %}
+          <a class="command-link" href="{{ post.url | relative_url }}">{{ post.panel_title }}</a>
+        {% endif %}
+      {% endfor %}
+	</div>
     <!-- INPUT TERMINAL -->
     <div style="max-width: 650px; margin: 40px auto; padding: 15px; border: 2px dashed #000000; background-color: #550d51; font-family: 'Atkinson Hyperlegible', Courier, monospace; text-align: left;">
       <h3 style="margin-top: 0; text-align: center; font-size: 16px; font-weight: bold; background-color: #000000; color: #550d51; padding: 5px; letter-spacing: 1px;">
